@@ -11,7 +11,6 @@ print("Indexes")
 str=input("\nEnter a string: ")
 print("The string you entered is: " + str)
 print(len(str))
-print("The type of the string is: " + str(type(str)))
 print(str[::   -1])  
 print(str[::   3]) #
 print(str[:0]) 
