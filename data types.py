@@ -10,9 +10,14 @@ print("\nAhmed is a " + str(var11) + "." + "\n40 is a " + str(var22) + "." + "\n
 print("Indexes")
 str=input("\nEnter a string: ")
 print("The string you entered is: " + str)
-print(len(str))
+print("The length of the string is: " + str(len(str)))
 print(str[::   -1])  # Reverses the string
 print(str[::   3]) # Prints every 3rd character
 print(str[:0])  # Prints an empty string
 print(str[0:5])  # Prints the first 5 characters
 print(str[5:])  # Prints the string from the 5th character to the end
+
+#congratulation message
+congrats = "\nCongratulations on winning the gold medal! We're proud of you. Keep up the great work!"
+ucongrats = congrats.upper()
+print(ucongrats)
