@@ -71,6 +71,42 @@ def square_root_program():
     number = float(input("Enter a number to find its square root: "))
     square_root = number ** 0.5
     print("The square root of", number, "is:", square_root)
+print()
+
+#And and OR operators
+def and_or_operator_program():
+    print("AND Operator Demo")
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    c = int(input("Enter third number: "))
+    if a and b and c:
+        print("All numbers are True.")
+    else:
+        print("No such boolean value to be seen.")
+        print()
+    print("OR Operator Demo")
+    d = int(input("Enter first number: "))
+    e = int(input("Enter second number: "))
+    if d > 0 or e > 0:
+        print("At least one number is greater than 0.")
+    else:
+        print("Both numbers are not greater than 0.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Main menu
 while True:
@@ -79,8 +115,9 @@ while True:
     print("2. Count money notes")
     print("3. Calculate percentage")
     print("4. Find square root")
-    print("5. Exit")
-    choice = input("Enter your choice (1-5): ")
+    print("5. And/Or Operators Demo")
+    print("6. Exit")
+    choice = input("Enter your choice (1-6): ")
     if choice == "1":
         average_program()
     elif choice == "2":
@@ -90,7 +127,9 @@ while True:
     elif choice == "4":
         square_root_program()
     elif choice == "5":
-        print("Goodbye!")
+        and_or_operator_program()
+    elif choice == "6":
+        print("Exiting the program. Goodbye!")
         break
     else:
         print("Invalid choice. Please try again.")
