@@ -89,25 +89,81 @@ def and_or_operator_program():
     e = int(input("Enter second number: "))
     if d > 0 or e > 0:
         print("At least one number is greater than 0.")
+    elif d > 0 and e > 0:
+        print("Both numbers are greater than 0.")
     else:
         print("Both numbers are not greater than 0.")
+        print()
 
+#Not Equal Operator Demo
+def not_equal_operator_demo():
+    print("Not Equal Operator Demo")
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    if x != y:
+        print("The numbers are not equal.")
+    else:
+        print("The numbers are equal.")
+    print()
+    print("Odd number check")
+    num = int(input("Enter a number to check if it's odd: "))
+    if num % 2 != 0:
+        print(num, "is an odd number.")
+    else:
+        print(num, "is an even number.")
+        print()
 
+#  BMI calculator for Kids, Teens, and Adults
+def bmi_calculator():
+    print("Welcome to the BMI Calculator for Kids, Teens, and Adults!")
+    print("This program will help you calculate your Body Mass Index (BMI) based on your age, weight, and height.")
 
+    print("Kids & Teens BMI Categories")
+    print("BMI Range       | Category")
+    print("----------------|------------------")
+    print("Below 18        | Underweight")
+    print("18 – 24         | Normal weight")
+    print("24 – 29         | Overweight")
+    print("30 and above    | Obese")
 
+print("\nAdults BMI Categories")
+print("BMI Range       | Category")
+print("----------------|----------------------")
+print("Below 18.5      | Underweight")
+print("18.5 – 24.9     | Normal / Healthy weight")
+print("25 – 29.9       | Overweight")
+print("30 and above    | Obese")
 
+age= int(input("\nEnter your age: "))
+if age < 18:
+    print("You are categorized as a Kid or Teen.")
+else:
+    print("You are categorized as an Adult.")
+weight= float(input("\nEnter your weight in kg: "))
+height= float(input("Enter your height in meters: "))
+bmi = weight / (height ** 2)
+print("Your BMI is:", bmi)
+print()
 
-
-
-
-
-
-
-
-
-
-
-
+if age < 18:
+    if bmi < 18:
+        print("Your BMI category is: Underweight")
+    elif 18 <= bmi < 24:
+        print("Your BMI category is: Normal weight")
+    elif 24 <= bmi < 29:
+        print("Your BMI category is: Overweight")
+    else:
+        print("Your BMI category is: Obese")
+else:
+    if bmi < 18.5:
+        print("Your BMI category is: Underweight")
+    elif 18.5 <= bmi < 24.9:
+        print("Your BMI category is: Normal / Healthy weight")
+    elif 25 <= bmi < 29.9:
+        print("Your BMI category is: Overweight")
+    else:
+        print("Your BMI category is: Obese")
+print()
 # Main menu
 while True:
     print("\nWhich program do you want to run?")
@@ -116,8 +172,10 @@ while True:
     print("3. Calculate percentage")
     print("4. Find square root")
     print("5. And/Or Operators Demo")
-    print("6. Exit")
-    choice = input("Enter your choice (1-6): ")
+    print("6. Not Equal Operator Demo")
+    print("7. BMI Calculator")
+    print("8. Exit")
+    choice = input("Enter your choice (1-8): ")
     if choice == "1":
         average_program()
     elif choice == "2":
@@ -129,6 +187,10 @@ while True:
     elif choice == "5":
         and_or_operator_program()
     elif choice == "6":
+        not_equal_operator_demo()
+    elif choice == "7":
+        bmi_calculator()
+    elif choice == "8":
         print("Exiting the program. Goodbye!")
         break
     else:
