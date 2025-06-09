@@ -20,5 +20,6 @@ print(str[5:])  # Prints the string from the 5th character to the end
 #congratulation message
 congrats = "\nCongratulations on winning the gold medal! We're proud of you. Keep up the great work!"
 print("A normal message: " + congrats)
+print()
 ucongrats = congrats.upper()
 print("In upper case: " + ucongrats)
