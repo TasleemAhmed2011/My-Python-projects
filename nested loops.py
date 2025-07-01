@@ -39,5 +39,10 @@ else:
     for digit in middle_digits:
         product *= int(digit)
     print("Product of the middle digits is:", product)
+print()
 
+# Ask the user to enter a decimal number 
+decimal = int(input("Enter a decimal number: "))
+binary = bin(decimal)[2:] 
+print("Binary number is:", binary)
 

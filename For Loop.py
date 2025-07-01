@@ -23,3 +23,15 @@ for b in user[::-1]:
     print(b, end="")
 print()
 
+#calculating the power of the giving number
+nbase = int(input("Enter base: "))
+exponent = int(input("Enter exponent (must be positive): "))
+if exponent < 0:
+    print("Exponent cannot be negative.")
+    exponent = int(input("Please enter a positive exponent: "))
+else:
+ result = 1
+for _ in range(exponent):
+    result *= nbase
+
+print("The number", nbase, "to the power of", exponent, "is", result)
