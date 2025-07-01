@@ -1,4 +1,4 @@
-import math
+# import math  # Removed because it is not used
 
 def average_program():
     print("This program will ask you to enter 5 numbers within specific ranges and calculate their total.")
@@ -126,44 +126,52 @@ def bmi_calculator():
     print("24 – 29         | Overweight")
     print("30 and above    | Obese")
 
-print("\nAdults BMI Categories")
-print("BMI Range       | Category")
-print("----------------|----------------------")
-print("Below 18.5      | Underweight")
-print("18.5 – 24.9     | Normal / Healthy weight")
-print("25 – 29.9       | Overweight")
-print("30 and above    | Obese")
+    print("\nAdults BMI Categories")
+    print("BMI Range       | Category")
+    print("----------------|----------------------")
+    print("Below 18.5      | Underweight")
+    print("18.5 – 24.9     | Normal / Healthy weight")
+    print("25 – 29.9       | Overweight")
+    print("30 and above    | Obese")
 
-age= int(input("\nEnter your age: "))
-if age < 18:
-    print("You are categorized as a Kid or Teen.")
-else:
-    print("You are categorized as an Adult.")
-weight= float(input("\nEnter your weight in kg: "))
-height= float(input("Enter your height in meters: "))
-bmi = weight / (height ** 2)
-print("Your BMI is:", bmi)
-print()
+    age = int(input("\nEnter your age: "))
+    if age < 18:
+        print("You are categorized as a Kid or Teen.")
+    else:
+        print("You are categorized as an Adult.")
+    weight = float(input("\nEnter your weight in kg: "))
+    height = float(input("Enter your height in meters: "))
+    bmi = weight / (height ** 2)
+    print("Your BMI is:", bmi)
+    print()
 
-if age < 18:
-    if bmi < 18:
-        print("Your BMI category is: Underweight")
-    elif 18 <= bmi < 24:
-        print("Your BMI category is: Normal weight")
-    elif 24 <= bmi < 29:
-        print("Your BMI category is: Overweight")
+    if age < 18:
+        if bmi < 18:
+            print("Your BMI category is: Underweight")
+        elif 18 <= bmi < 24:
+            print("Your BMI category is: Normal weight")
+        elif 24 <= bmi < 29:
+            print("Your BMI category is: Overweight")
+        else:
+            print("Your BMI category is: Obese")
     else:
-        print("Your BMI category is: Obese")
-else:
-    if bmi < 18.5:
-        print("Your BMI category is: Underweight")
-    elif 18.5 <= bmi < 24.9:
-        print("Your BMI category is: Normal / Healthy weight")
-    elif 25 <= bmi < 29.9:
-        print("Your BMI category is: Overweight")
+        if bmi < 18.5:
+            print("Your BMI category is: Underweight")
+        elif 18.5 <= bmi < 24.9:
+            print("Your BMI category is: Normal / Healthy weight")
+        elif 25 <= bmi < 29.9:
+            print("Your BMI category is: Overweight")
+        else:
+            print("Your BMI category is: Obese")
+    print()
+
+#program to check if the input is alphabet or not
+def is_alphabet():
+    char = input("Enter a character: ")
+    if (char >= 'a' and char <= 'z') or (char >= 'A' and char <= 'Z'):
+        print("Alphabet")
     else:
-        print("Your BMI category is: Obese")
-print()
+        print("Not an alphabet")
 # Main menu
 while True:
     print("\nWhich program do you want to run?")
@@ -174,8 +182,9 @@ while True:
     print("5. And/Or Operators Demo")
     print("6. Not Equal Operator Demo")
     print("7. BMI Calculator")
-    print("8. Exit")
-    choice = input("Enter your choice (1-8): ")
+    print("8. Check Alphabet")
+    print("9. Exit")
+    choice = input("Enter your choice (1-9): ")
     if choice == "1":
         average_program()
     elif choice == "2":
@@ -191,6 +200,8 @@ while True:
     elif choice == "7":
         bmi_calculator()
     elif choice == "8":
+        is_alphabet()
+    elif choice == "9":
         print("Exiting the program. Goodbye!")
         break
     else:
