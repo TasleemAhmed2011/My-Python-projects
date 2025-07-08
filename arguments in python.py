@@ -20,7 +20,14 @@ def factorial(tasleem):
         return 1
     else:
         return tasleem * factorial(tasleem - 1)
-number = int(input("Enter a number to find its factorial: "))
+print("The common factorial of numbers are as follows")
+print("The factorial of 0 is: ",factorial(0))
+print("The factorial of 1 is: ",factorial(1))
+print("The factorial of 2 is: ",factorial(2))
+print("The factorial of 4 is: ",factorial(4))
+print("The factorial of 5 is: ",factorial(5))
+print("The factorial of 10 is: ",factorial(10))
+number = int(input("Enter a number to find the factorial of an another number: "))
 if number < 0:
     print("Factorial is not defined for negative numbers.")
 else:
