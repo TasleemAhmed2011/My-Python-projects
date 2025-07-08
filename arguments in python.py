@@ -33,3 +33,15 @@ if number < 0:
 else:
     result = factorial(number)
     print(f"The factorial of {number} is: {result}")
+
+# shutdown function asking from user
+def shutdown():
+    response = input("Do you want to shut down the system? (yes/no): ").strip().lower()
+    if response == 'yes':
+        print("Shutting down the system...")
+    elif response == 'no':
+        print("System shutdown cancelled.")
+    else:
+        print("Invalid input. Please enter 'yes' or 'no'.")
+    print("Shutting down...")
+    exit()
