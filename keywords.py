@@ -31,3 +31,36 @@ for i in range(10, 0, -1):
     print(i)
 print()
 
+#due payment example
+def calculate_due():
+    bill = float(input("Enter bill amount: "))
+    paid = float(input("Enter amount paid: "))
+
+    if bill < 0 or paid < 0:
+        print("Invalid input")
+        return
+
+    if paid == bill:
+        print("No due amount")
+        return 0
+
+    if paid > bill:
+        extra = paid - bill
+        print("Extra paid. Returning:", extra)
+        return 0
+
+    for i in range(1, 4):
+        if paid < bill:
+            due = bill - paid
+            print("Due amount is:", due)
+            break
+        else:
+            continue
+
+    return bill - paid
+
+due = calculate_due()
+if due:
+    print("Final due:", due)
+
+
