@@ -50,3 +50,14 @@ while True:
     if play != 'yes':
         break
 print("Thanks for playing!")
+print()
+
+
+import math
+angle = float(input("Enter angle in degrees: "))
+radian = math.radians(angle)
+sin_value = round(math.sin(radian), 4)
+cos_value = round(math.cos(radian), 4)
+tan_value = round(math.tan(radian), 4)
+print(f"Sine: {sin_value}, Cosine: {cos_value}, Tangent: {tan_value}")
+print()
