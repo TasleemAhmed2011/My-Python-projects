@@ -122,6 +122,7 @@ x=pair_elements().twoSum((10,20,30,40,50,60,70), value)
 print(x)
 print()
 
+# Dog class
 class Dog:
     species = "Canine"
     
@@ -154,7 +155,23 @@ dog4.display()
 dog5.display()
 dog6.display()
 dog7.display()
+print()
 
+# Circle
+import math
 
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
 
+    def area(self):
+        return math.pi * self.radius * self.radius
 
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+
+c1 = Circle(7)
+print("Radius:", c1.radius)
+print("Area:", c1.area())
+print("Perimeter:", c1.perimeter())
+print()
