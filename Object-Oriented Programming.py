@@ -120,6 +120,41 @@ class pair_elements:
 value= int(input("Enter sum for which you want to make this search: "))
 x=pair_elements().twoSum((10,20,30,40,50,60,70), value)
 print(x)
+print()
+
+class Dog:
+    species = "Canine"
+    
+    def __init__(self, breed, color, age, weight):
+        self.breed = breed
+        self.color = color
+        self.age = age
+        self.weight = weight
+    
+    def display(self):
+        print("Species:", Dog.species)
+        print("Breed:", self.breed)
+        print("Color:", self.color)
+        print("Age:", self.age, "years")
+        print("Weight:", self.weight, "kg")
+        print()
+
+dog1 = Dog("Labrador", "Golden", 3, 30)
+dog2 = Dog("German Shepherd", "Black and Tan", 4, 35)
+dog3 = Dog("Bulldog", "White", 2, 25)
+dog4 = Dog("Poodle", "Brown", 5, 20)
+dog5 = Dog("Beagle", "Tricolor", 3, 18)
+dog6 = Dog("Rottweiler", "Black", 6, 45)
+dog7 = Dog("Husky", "Gray and White", 4, 28)
+
+dog1.display()
+dog2.display()
+dog3.display()
+dog4.display()
+dog5.display()
+dog6.display()
+dog7.display()
+
 
 
 
