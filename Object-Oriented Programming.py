@@ -175,3 +175,62 @@ print("Radius:", c1.radius)
 print("Area:", c1.area())
 print("Perimeter:", c1.perimeter())
 print()
+
+#Private Attribute
+
+class myClass:
+    # private variable
+    __privateVar = 27
+
+    def __privMeth(self):
+        print("I'm inside class myClass")
+
+    # public function to print private variable
+    def hello(self):
+        print("Private Variable value:", myClass.__privateVar)
+
+foo = myClass()
+
+foo.hello()
+
+foo._myClass__privMeth()   # ✅ accessing private method
+print()
+
+#Computer Price
+
+class Computer():
+    def __init__(self):
+        self.__maxprice = 900
+
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
+
+    def set_max_price(self, price):
+        self.__maxprice = price
+c = Computer()
+c.sell()
+  # change the price
+c.__maxprice = 1000
+c.sell()
+c.set_max_price(1000)
+c.sell()
+print()
+
+
+#Reverse a string
+class Reverser:
+    def __init__(self, text):
+        self.text = text
+
+    def reverse_words(self):
+        # split into words, reverse, then join
+        words = self.text.split()
+        reversed_words = words[::-1]
+        return " ".join(reversed_words)
+    
+sentence = input("Enter a sentence: ")
+obj = Reverser(sentence)
+print("Reversed (word by word):", obj.reverse_words())
+
+
+
