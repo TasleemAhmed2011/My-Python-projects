@@ -42,13 +42,13 @@ def main():
             if event.type == QUIT:
                 done=True
         pressed_keys = pygame.key.get_pressed()
-        if pressed[pygame.K_UP]:
+        if pressed_keys[pygame.K_UP]:
             y -= 3
-        if pressed[pygame.K_DOWN]:
+        if pressed_keys[pygame.K_DOWN]:
             y += 3
-        if pressed[pygame.K_LEFT]:
+        if pressed_keys[pygame.K_LEFT]:
             x -= 3
-        if pressed[pygame.K_RIGHT]:
+        if pressed_keys[pygame.K_RIGHT]:
             x += 3
 
         x=min(max(0,x),screen_width-sprite_width)
