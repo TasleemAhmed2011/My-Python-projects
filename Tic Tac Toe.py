@@ -1,76 +1,87 @@
-board = {'7':' ', '8': ' ', '9': ' ','4':' ', '5': ' ', '6': ' ','1':' ', '2': ' ', '3': ' ',}
-boardkeys = []
+# ---- TIC TAC TOE CONSOLE GAME ----
 
-for key in board:
-    boardkeys.append(key)
+board = {
+    '7': ' ', '8': ' ', '9': ' ',
+    '4': ' ', '5': ' ', '6': ' ',
+    '1': ' ', '2': ' ', '3': ' '
+}
 
-def printboard(board):
-    print(board['7'] + '|' + board['8'] + '|' + board['9'])
-    print('-+-+-')
-    print(board['4'] + '|' + board['5'] + '|' + board['6'])
-    print('-+-+-')
-    print(board['1'] + '|' + board['2'] + '|' + board['3'])
+board_keys = list(board.keys())
 
-def game(): 
+
+def print_board(b):
+    print()
+    print(b['7'] + ' | ' + b['8'] + ' | ' + b['9'])
+    print('--+---+--')
+    print(b['4'] + ' | ' + b['5'] + ' | ' + b['6'])
+    print('--+---+--')
+    print(b['1'] + ' | ' + b['2'] + ' | ' + b['3'])
+    print()
+
+
+def check_win(b, mark):
+    # rows
+    if (b['7'] == b['8'] == b['9'] == mark) or \
+       (b['4'] == b['5'] == b['6'] == mark) or \
+       (b['1'] == b['2'] == b['3'] == mark) or \
+       (b['7'] == b['4'] == b['1'] == mark) or \
+       (b['8'] == b['5'] == b['2'] == mark) or \
+       (b['9'] == b['6'] == b['3'] == mark) or \
+       (b['7'] == b['5'] == b['3'] == mark) or \
+       (b['9'] == b['5'] == b['1'] == mark):
+        return True
+    return False
+
+
+def game():
     turn = 'X'
     count = 0
-    for i in range(10):
-        printboard(board)
-        print('it is your turn ' + turn)
-        move=input()
+
+    print("Welcome to Tic Tac Toe!")
+    print("Positions:")
+    print("7 | 8 | 9")
+    print("--+---+--")
+    print("4 | 5 | 6")
+    print("--+---+--")
+    print("1 | 2 | 3")
+    print()
+
+    for _ in range(9):
+        print_board(board)
+        print("It is your turn,", turn)
+        move = input("Choose a position (1-9): ")
+
+        if move not in board:
+            print("Invalid position! Try again.")
+            continue
+
         if board[move] == ' ':
             board[move] = turn
             count += 1
         else:
-            print('That place is already taken!')
+            print("That place is already filled. Try again.")
             continue
 
+        # check win
         if count >= 5:
-            if board['7'] == board['8'] == board['9'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['4'] == board['5'] == board['6'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['1'] == board['2'] == board['3'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['7'] == board['4'] == board['1'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['8'] == board['5'] == board['2'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['9'] == board['6'] == board['3'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['7'] == board['5'] == board['3'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
-                break
-            elif board['9'] == board['5'] == board['1'] != ' ':
-                printboard(board)
-                print('Player ' + turn + ' wins!')
+            if check_win(board, turn):
+                print_board(board)
+                print("*****", turn, "wins! *****")
                 break
 
+        # draw
         if count == 9:
-            print('It\'s a draw!')
+            print_board(board)
+            print("Game is a draw!")
+            break
 
-        if turn == 'X':
-            turn = 'O'
-        else:
-            turn = 'X'
-        
-    restart=input('Do you want to play again? (y/n): ')
-    if restart=='y' or restart=='Y':
-        for key in boardkeys:
-            board[key] = ' '
-        game()
-    else:
-        print('Thanks for playing!')
+        # change player
+        turn = 'O' if turn == 'X' else 'X'
+
+    print("\nGame over.")
+
+
+# ---- VERY IMPORTANT: CALL THE GAME ----
+if __name__ == "__main__":
+    game()
+    print("Created By Tasleem Ahmed.")
